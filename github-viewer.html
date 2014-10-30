@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+	<head>
+		<meta charset="UTF-8">
+		<title>Personal Website Viewer</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok2v=1613a3a185/"},atok:"05f5d8e4757e944318939b532f398096",petok:"25e974109542a744e0999a950cc2882e1cf57f54-1414669543-1800",zone:"taichunmin.idv.tw",rocket:"0",apps:{"ga_key":{"ua":"UA-39556213-1","ga_bs":"2"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok2v=919620257c/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style>
+			body{
+				font-family: "微軟正黑體", consolas;
+			}
+			.github-btn-panel {
+				padding: 15px 0 0 15px;
+			}
+			.github-btn-panel .col-xs-6{
+				padding-left: 0;
+			}
+			.github-btn-panel button {
+				margin-bottom: 15px;
+			}
+		</style>
+	<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-39556213-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+	<body>
+		<div class="container">
+			<h1>Personal Website Viewer</h1>
+			<form action="" role="form" id="form1" class="form-horizontal">
+				<div class="form-group">
+					<label for="path" class="col-sm-2 control-label">Path</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="path" value="20141030.html">
+					</div>
+				</div>
+			</form>
+			<div class="panel panel-success" id="panel-tutor">
+				<div class="panel-heading">
+					<h3 class="panel-title"><span class="glyphicon glyphicon-star"></span> 助教 <span class="badge">0</span></h3>
+				</div>
+				<div class="panel-body github-btn-panel">
+				</div>
+			</div>
+			<div class="panel panel-primary" id="panel-student">
+				<div class="panel-heading">
+					<h3 class="panel-title"><span class="glyphicon glyphicon-thumbs-up"></span> 學員 <span class="badge">0</span></h3>
+				</div>
+				<div class="panel-body github-btn-panel">
+				</div>
+			</div>
+		</div>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script>
+			function randerGithubBtn(target, githubs) {
+				var $target = $(target).find('.github-btn-panel'),
+					rander = [],
+					$badge = $(target).find('.badge');
+				$.each(githubs, function(user, name){
+					rander.push('<div class="col-xs-6 col-sm-3 col-md-2"><button type="button" class="btn btn-block btn-default" github="'+user+'">'+name+'</button></div>');
+				});
+				$target.append(rander.join(''));
+				$badge.text($(target).find('[github]').length);
+			}
+			var githubTutor = {
+				"baconYao": "張培堯(堯堯)",
+				"chgu82837": "西瓜",
+				"duck12212": "施宗呈(黑鴨)",
+				"emma2334": "Emma",
+				"kjes89011": "劉昭陽(小黑)",
+				"pomelo830523": "何青祐(柚子)",
+				"s890081tonyhsu": "OS",
+				"taichunmin": "均民",
+				"tom83615": "果醬",
+			}, githubStudent = {
+				"0165": "林佑儒",
+				"a1b2c3173": "王翊丞",
+				"asd5637": "林晉宇",
+				"charlie831007": "王允佑",
+				"chenhsinya": "陳薪雅",
+				"cp3cp3cp3": "李佳齊",
+				"danielchi13711": "紀典勳",
+				"darklim": "林鈺峰",
+				"David-Tsui": "崔家華",
+				"david30907d": "張泰瑋",
+				"dicky0626": "葉日豐",
+				"dnychennnn": "陳勇瑜",
+				"Evan309321": "莊亦銘",
+				"HONG-CAI-YI": "洪采依",
+				"id506507": "陳子晴HEHE",
+				"j9963232q": "黃翔宇",
+				"JackYo": "游宗樵",
+				"jd615645": "杜杰",
+				"JerryShey": "周彤",
+				"kartd0094775": "林凡煒",
+				"ken5112840801": "沒有道理",
+				"Leodn": "林佑昇",
+				"MayYar": "盧俊言",
+				"michael81420": "謝孝忠",
+				"miyuiki": "張覺意",
+				"momo1256m": "鄭勝銜",
+				"pllding": "佟紹鵬",
+				"porker6280": "林銘泓",
+				"qas612820704": "江柏廷",
+				"RaymondTeng": "陳均騰",
+				"ric113": "謝禎原",
+				"RuinsLCH": "廖志豪",
+				"s60496127": "廖勝廉",
+				"smallhand": "李佩俞",
+				"SnoopyFighter": "黃筱真",
+				"t7214948ttt": "鍾孟儒",
+				"will10227": "彭成傑",
+				"WuIFan": "吳一凡",
+				"yangshaun": "楊尚恩",
+				"zephyros0305": "劉永祥",
+				"ZhengAKai": "鄭凱駿",
+			};
+			$(function(){
+				randerGithubBtn('#panel-tutor', githubTutor);
+				randerGithubBtn('#panel-student', githubStudent);
+				$('.github-btn-panel').delegate('[github]', 'click', function(){
+					var $this = $(this), path = $('#path').val();
+					path = path.replace(/^\//,'');
+					window.open('http://'+$this.attr('github')+'.github.io/'+path);
+				});
+				$('#form1').submit(function(e){
+					e.preventDefault();
+				});
+			});
+		</script>
+	</body>
+</html>
